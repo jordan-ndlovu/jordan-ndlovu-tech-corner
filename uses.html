@@ -218,10 +218,10 @@
   <div class="wrap">
     <div class="uses-kicker"><span class="cursor"></span> LAST UPDATED JULY 2026</div>
     <h1>Uses</h1>
-    <p class="lede">The hardware, terminal setup, and day-to-day tools behind the writing, code, and recordings on this site — the boring stack that keeps everything running.</p>
+    <p class="lede">The hardware, terminal setup, and day-to-day tools behind shipping and running infrastructure — from local dev to production AWS accounts.</p>
     <div class="uses-prompt">
-      <span class="who">jordan@studio</span><span>:</span><span class="path">~/uses</span><span>$</span>
-      <span class="cmd">cat README.md</span>
+      <span class="who">jordan@bastion</span><span>:</span><span class="path">~/uses</span><span>$</span>
+      <span class="cmd">aws sts get-caller-identity</span>
     </div>
   </div>
 </section>
@@ -232,10 +232,10 @@
     <div class="uses-toc">
       <a href="#hardware">hardware</a>
       <a href="#editor">editor &amp; terminal</a>
-      <a href="#browser">browser</a>
-      <a href="#writing">writing &amp; design</a>
-      <a href="#recording">podcast &amp; recording</a>
-      <a href="#productivity">productivity</a>
+      <a href="#cloud">cloud &amp; aws</a>
+      <a href="#iac">iac &amp; config</a>
+      <a href="#cicd">ci/cd &amp; containers</a>
+      <a href="#monitoring">monitoring &amp; collab</a>
     </div>
 
     <div class="uses-section" id="hardware">
@@ -246,24 +246,24 @@
       <div class="uses-grid">
         <div class="uses-card">
           <div class="uses-card-top"><h3>MacBook Pro 14″, M3 Pro</h3><span class="uses-tag">Daily driver</span></div>
-          <p>Main machine for writing, development, and editing. 36GB RAM keeps it comfortable running a browser, editor, and audio tools at once.</p>
-          <div class="why">Battery life survives a full day of travel between talks.</div>
+          <p>Main machine for terminal work, IaC, and dashboards. 36GB RAM keeps multiple SSH sessions, a browser full of console tabs, and Docker comfortable at once.</p>
+          <div class="why">Runs Terraform plans and a local k8s cluster without breaking a sweat.</div>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>27″ 4K monitor</h3><span class="uses-tag">Desk</span></div>
-          <p>External display for the home setup, docked next to the laptop for a two-screen writing and coding layout.</p>
+          <div class="uses-card-top"><h3>Dual 27″ monitors</h3><span class="uses-tag">Desk</span></div>
+          <p>One screen for terminal and editor, the other for CloudWatch dashboards, Grafana, and whatever's on fire that day.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>YubiKey 5C</h3><span class="uses-tag">Security</span></div>
+          <p>Hardware key for AWS root account and IAM Identity Center MFA — no phone-based 2FA on anything that touches production.</p>
         </div>
         <div class="uses-card">
           <div class="uses-card-top"><h3>Keychron mechanical keyboard</h3><span class="uses-tag">Input</span></div>
-          <p>Low-profile mechanical board, brown switches. Swapped in after one too many long writing sessions on a laptop keyboard.</p>
+          <p>Low-profile board, brown switches. Survives long stretches of typing out Terraform and YAML without complaint.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Logitech MX Master</h3><span class="uses-tag">Input</span></div>
-          <p>Ergonomic mouse that also drives the second machine over Bluetooth when switching between desk and stage setups.</p>
-        </div>
-        <div class="uses-card">
-          <div class="uses-card-top"><h3>iPhone + tripod rig</h3><span class="uses-tag">Mobile</span></div>
-          <p>Used for quick voice memos, on-stage backup recordings, and behind-the-scenes clips for the blog.</p>
+          <div class="uses-card-top"><h3>Logitech MX Master 3</h3><span class="uses-tag">Input</span></div>
+          <p>Pairs over Bluetooth across the laptop and a spare desktop used for load-testing and long-running jobs.</p>
         </div>
       </div>
     </div>
@@ -276,111 +276,135 @@
       <div class="uses-grid">
         <div class="uses-card">
           <div class="uses-card-top"><h3>VS Code</h3><span class="uses-tag">Editor</span></div>
-          <p>Primary editor, kept lean — a handful of extensions, a synced settings file, and a theme that matches this site's dark palette.</p>
+          <p>Primary editor for Terraform, YAML, and Python — HashiCorp Terraform, AWS Toolkit, and Remote-SSH extensions do most of the heavy lifting.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Warp</h3><span class="uses-tag">Terminal</span></div>
-          <p>Terminal emulator with command blocks and AI-assisted lookups for the commands I always forget the flags to.</p>
+          <div class="uses-card-top"><h3>iTerm2</h3><span class="uses-tag">Terminal</span></div>
+          <p>Split panes for tailing logs in one pane while running commands in another — profiles set up per AWS account to avoid mixing prod and staging.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>zsh + oh-my-zsh</h3><span class="uses-tag">Shell</span></div>
-          <p>Shell of choice, with a minimal prompt theme showing just the path and git branch — no clutter.</p>
+          <div class="uses-card-top"><h3>zsh + Powerlevel10k</h3><span class="uses-tag">Shell</span></div>
+          <p>Prompt shows git branch, k8s context, and active AWS profile at a glance — the fastest way to avoid running the wrong command in the wrong account.</p>
         </div>
         <div class="uses-card">
           <div class="uses-card-top"><h3>tmux</h3><span class="uses-tag">Multiplexer</span></div>
-          <p>Keeps long-running sessions alive over SSH for anything running on a remote box or a Raspberry Pi.</p>
+          <p>Keeps sessions alive over SSH to bastion hosts and jump boxes, so a dropped VPN connection doesn't kill a long-running command.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>GitHub + GitHub CLI</h3><span class="uses-tag">Version control</span></div>
-          <p>All projects live here; the CLI handles PRs and issues without leaving the terminal.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="uses-section" id="browser">
-      <div class="uses-section-head">
-        <span class="path">~/browser</span>
-        <h2>Browser</h2>
-      </div>
-      <div class="uses-grid">
-        <div class="uses-card">
-          <div class="uses-card-top"><h3>Arc</h3><span class="uses-tag">Daily</span></div>
-          <p>Spaces keep work, writing research, and personal tabs cleanly separated without twelve windows open at once.</p>
+          <div class="uses-card-top"><h3>AWS CLI v2</h3><span class="uses-tag">CLI</span></div>
+          <p>Day-to-day resource inspection and scripting — paired with <code>aws-vault</code> so credentials never sit unencrypted on disk.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>1Password</h3><span class="uses-tag">Extension</span></div>
-          <p>Password manager and the thing that makes two-factor logins on stage demos actually bearable.</p>
-        </div>
-        <div class="uses-card">
-          <div class="uses-card-top"><h3>uBlock Origin</h3><span class="uses-tag">Extension</span></div>
-          <p>Non-negotiable. Faster pages, fewer trackers.</p>
+          <div class="uses-card-top"><h3>kubectl + k9s</h3><span class="uses-tag">Kubernetes</span></div>
+          <p>k9s for a fast terminal UI over clusters; raw kubectl when a script needs exact, scriptable output.</p>
         </div>
       </div>
     </div>
 
-    <div class="uses-section" id="writing">
+    <div class="uses-section" id="cloud">
       <div class="uses-section-head">
-        <span class="path">~/writing</span>
-        <h2>Writing &amp; design</h2>
+        <span class="path">~/cloud</span>
+        <h2>Cloud &amp; AWS</h2>
       </div>
       <div class="uses-grid">
         <div class="uses-card">
-          <div class="uses-card-top"><h3>iA Writer</h3><span class="uses-tag">Drafting</span></div>
-          <p>Where blog posts and notes start life — plain markdown, no formatting distractions until the piece is ready.</p>
+          <div class="uses-card-top"><h3>AWS (multi-account)</h3><span class="uses-tag">Platform</span></div>
+          <p>Primary cloud — EC2, S3, VPC, RDS, and IAM day to day, spread across separate dev, staging, and prod accounts under an AWS Organization.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Figma</h3><span class="uses-tag">Design</span></div>
-          <p>Slide decks for talks and quick mockups for this site's layout before they become actual HTML and CSS.</p>
+          <div class="uses-card-top"><h3>IAM Identity Center</h3><span class="uses-tag">Access</span></div>
+          <p>Single sign-on across every AWS account — no long-lived IAM user keys floating around.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Grammarly</h3><span class="uses-tag">Editing</span></div>
-          <p>A second pass on longer posts, mostly for catching the typos a tired brain skips over.</p>
+          <div class="uses-card-top"><h3>Amazon EKS</h3><span class="uses-tag">Orchestration</span></div>
+          <p>Managed Kubernetes for containerized workloads — node groups sized and scaled through Terraform, not clicked together in the console.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>AWS Systems Manager</h3><span class="uses-tag">Ops</span></div>
+          <p>Session Manager instead of SSH keys for shell access to instances, plus Patch Manager for keeping fleets up to date.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Amazon CloudWatch</h3><span class="uses-tag">Observability</span></div>
+          <p>Logs, metrics, and alarms baked into every stack before it ships — the first stop when something's slow or noisy.</p>
         </div>
       </div>
     </div>
 
-    <div class="uses-section" id="recording">
+    <div class="uses-section" id="iac">
       <div class="uses-section-head">
-        <span class="path">~/podcast</span>
-        <h2>Podcast &amp; recording</h2>
+        <span class="path">~/iac</span>
+        <h2>Infrastructure as Code &amp; config</h2>
       </div>
       <div class="uses-grid">
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Shure SM7B</h3><span class="uses-tag">Microphone</span></div>
-          <p>Broadcast-standard dynamic mic for the podcast and any recorded talks — flat, warm, forgiving of a noisy room.</p>
+          <div class="uses-card-top"><h3>Terraform</h3><span class="uses-tag">IaC</span></div>
+          <p>Primary tool for provisioning across every environment — modules per service, remote state in S3 with a DynamoDB lock table.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Focusrite Scarlett 2i2</h3><span class="uses-tag">Interface</span></div>
-          <p>Clean preamp and the bridge between the mic and the laptop for every episode.</p>
+          <div class="uses-card-top"><h3>AWS CloudFormation</h3><span class="uses-tag">IaC</span></div>
+          <p>Used where a stack needs tight native AWS support — CDK-generated templates included.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Riverside.fm</h3><span class="uses-tag">Recording</span></div>
-          <p>Records local high-quality tracks for remote guest interviews, so a shaky connection never ruins the audio.</p>
+          <div class="uses-card-top"><h3>Ansible</h3><span class="uses-tag">Config mgmt</span></div>
+          <p>Configures EC2 fleets after Terraform provisions them — package installs, users, and application config.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Descript</h3><span class="uses-tag">Editing</span></div>
-          <p>Edits episodes by editing the transcript — cuts filler words and dead air in a fraction of the usual time.</p>
+          <div class="uses-card-top"><h3>Packer</h3><span class="uses-tag">Image builds</span></div>
+          <p>Bakes golden AMIs with the base config and monitoring agents already installed, so instances boot ready to work.</p>
         </div>
       </div>
     </div>
 
-    <div class="uses-section" id="productivity">
+    <div class="uses-section" id="cicd">
       <div class="uses-section-head">
-        <span class="path">~/workflow</span>
-        <h2>Productivity</h2>
+        <span class="path">~/cicd</span>
+        <h2>CI/CD &amp; containers</h2>
       </div>
       <div class="uses-grid">
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Notion</h3><span class="uses-tag">Notes</span></div>
-          <p>Talk outlines, blog drafts, and a running backlog of ideas that may or may not ever become posts.</p>
+          <div class="uses-card-top"><h3>GitHub Actions</h3><span class="uses-tag">CI/CD</span></div>
+          <p>Pipelines for infra changes — plan on pull request, apply on merge, with required approvals before anything touches prod.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Linear</h3><span class="uses-tag">Tasks</span></div>
-          <p>Tracks anything with more than one step — site changes, talk prep, podcast production.</p>
+          <div class="uses-card-top"><h3>Docker</h3><span class="uses-tag">Containers</span></div>
+          <p>Local builds and testing before images ship to a registry and out to EKS.</p>
         </div>
         <div class="uses-card">
-          <div class="uses-card-top"><h3>Raycast</h3><span class="uses-tag">Launcher</span></div>
-          <p>Replaces Spotlight for app switching, clipboard history, and a handful of small custom scripts.</p>
+          <div class="uses-card-top"><h3>Jenkins</h3><span class="uses-tag">CI/CD</span></div>
+          <p>Still runs a handful of legacy pipelines that predate the move to GitHub Actions — on the list to migrate.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Helm</h3><span class="uses-tag">Kubernetes</span></div>
+          <p>Templates manifests for EKS deployments so environment differences live in values files, not copy-pasted YAML.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="uses-section" id="monitoring">
+      <div class="uses-section-head">
+        <span class="path">~/monitoring</span>
+        <h2>Monitoring &amp; collaboration</h2>
+      </div>
+      <div class="uses-grid">
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Grafana + Prometheus</h3><span class="uses-tag">Observability</span></div>
+          <p>Dashboards for cluster and service-level metrics, scraped straight out of EKS workloads.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Datadog</h3><span class="uses-tag">Monitoring</span></div>
+          <p>Unified metrics, logs, and traces across accounts — the first place to check when an alert fires at 2am.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>PagerDuty</h3><span class="uses-tag">On-call</span></div>
+          <p>Incident alerting and escalation, wired into CloudWatch and Datadog alarms.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Jira</h3><span class="uses-tag">Tasks</span></div>
+          <p>Sprint tracking and change tickets — every infra change traces back to a ticket.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Confluence + Slack</h3><span class="uses-tag">Docs &amp; comms</span></div>
+          <p>Runbooks and architecture docs live in Confluence; day-to-day coordination and alert noise live in Slack.</p>
         </div>
       </div>
       <p class="uses-note">This list changes more often than it should — check back for updates, or ask on the contact page if something here has been swapped out.</p>
