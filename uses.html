@@ -7,9 +7,193 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+  /* ===== Uses page — terminal-inspired, layered on top of the site's existing tokens =====
+     Falls back to a self-contained amber/black theme if styles.css variables aren't present. */
+  :root{
+    --u-bg: var(--bg, #0a0a0c);
+    --u-panel: var(--panel, #131317);
+    --u-border: var(--border, #24242b);
+    --u-text: var(--text, #e9e9ec);
+    --u-muted: var(--muted, #8a8a94);
+    --u-accent: var(--accent, #ffb454);
+    --u-accent-dim: color-mix(in srgb, var(--u-accent) 35%, transparent);
+    --u-green: #7ee787;
+  }
+
+  .uses-hero{
+    padding: 96px 0 48px;
+    border-bottom: 1px solid var(--u-border);
+  }
+  .uses-hero .wrap{ max-width: 980px; }
+  .uses-kicker{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--u-accent);
+    border:1px solid var(--u-accent-dim);
+    background: color-mix(in srgb, var(--u-accent) 8%, transparent);
+    padding: 6px 12px; border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .uses-kicker .cursor{
+    width:7px; height:14px; background:var(--u-accent);
+    animation: blink 1.1s steps(1) infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .uses-hero h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+    color: var(--u-text);
+  }
+  .uses-hero p.lede{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--u-muted);
+    max-width: 62ch;
+    margin: 0 0 28px;
+  }
+
+  .uses-prompt{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--u-muted);
+    background: var(--u-panel);
+    border: 1px solid var(--u-border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  }
+  .uses-prompt .who{ color: var(--u-green); }
+  .uses-prompt .path{ color: var(--u-accent); }
+  .uses-prompt .cmd{ color: var(--u-text); }
+
+  .uses-body{ padding: 64px 0 40px; }
+  .uses-body .wrap{ max-width: 980px; }
+
+  .uses-toc{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-bottom: 56px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+  }
+  .uses-toc a{
+    color: var(--u-muted);
+    border:1px solid var(--u-border);
+    padding: 7px 13px;
+    border-radius: 999px;
+    text-decoration:none;
+    transition: color .15s ease, border-color .15s ease, background .15s ease;
+  }
+  .uses-toc a:hover{
+    color: var(--u-accent);
+    border-color: var(--u-accent-dim);
+    background: color-mix(in srgb, var(--u-accent) 6%, transparent);
+  }
+
+  .uses-section{ margin-bottom: 54px; scroll-margin-top: 32px; }
+  .uses-section-head{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--u-border);
+  }
+  .uses-section-head .path{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--u-accent);
+  }
+  .uses-section-head h2{
+    font-family:'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--u-text);
+    margin: 0;
+  }
+
+  .uses-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+
+  .uses-card{
+    position: relative;
+    background: var(--u-panel);
+    border: 1px solid var(--u-border);
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    transition: border-color .18s ease, transform .18s ease;
+  }
+  .uses-card:hover{
+    border-color: var(--u-accent-dim);
+    transform: translateY(-2px);
+  }
+  .uses-card-top{
+    display:flex; align-items:flex-start; justify-content:space-between;
+    gap: 10px; margin-bottom: 8px;
+  }
+  .uses-card h3{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--u-text);
+    margin: 0;
+  }
+  .uses-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--u-muted);
+    border: 1px solid var(--u-border);
+    border-radius: 5px;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+  .uses-card p{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--u-muted);
+    margin: 0;
+  }
+  .uses-card .why{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--u-border);
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--u-accent);
+  }
+  .uses-card .why::before{ content: "// "; color: var(--u-muted); }
+
+  .uses-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--u-muted);
+    border-left: 2px solid var(--u-accent-dim);
+    padding: 4px 0 4px 16px;
+    margin-top: 24px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .uses-kicker .cursor{ animation: none; opacity: 1; }
+    .uses-card{ transition: none; }
+  }
+
+  @media (max-width: 640px){
+    .uses-hero{ padding: 72px 0 36px; }
+    .uses-grid{ grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
-
 <header>
   <nav>
     <div class="logo"><span class="dot"></span> JORDAN.NDLOVU</div>
@@ -30,14 +214,178 @@
   </nav>
 </header>
 
-<section class="simple-hero">
+<section class="uses-hero">
   <div class="wrap">
-    <div class="coming-soon-badge"><span class="dot"></span> UNDER CONSTRUCTION</div>
+    <div class="uses-kicker"><span class="cursor"></span> LAST UPDATED JULY 2026</div>
     <h1>Uses</h1>
-    <p>The tools, terminal setup, and hardware behind the day-to-day work. Coming soon.</p>
-    <div class="cta-row" style="justify-content:center; margin-top:28px;">
-      <a class="btn btn-primary" href="index.html">← Back to home</a>
+    <p class="lede">The hardware, terminal setup, and day-to-day tools behind the writing, code, and recordings on this site — the boring stack that keeps everything running.</p>
+    <div class="uses-prompt">
+      <span class="who">jordan@studio</span><span>:</span><span class="path">~/uses</span><span>$</span>
+      <span class="cmd">cat README.md</span>
     </div>
+  </div>
+</section>
+
+<section class="uses-body">
+  <div class="wrap">
+
+    <div class="uses-toc">
+      <a href="#hardware">hardware</a>
+      <a href="#editor">editor &amp; terminal</a>
+      <a href="#browser">browser</a>
+      <a href="#writing">writing &amp; design</a>
+      <a href="#recording">podcast &amp; recording</a>
+      <a href="#productivity">productivity</a>
+    </div>
+
+    <div class="uses-section" id="hardware">
+      <div class="uses-section-head">
+        <span class="path">~/hardware</span>
+        <h2>Hardware</h2>
+      </div>
+      <div class="uses-grid">
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>MacBook Pro 14″, M3 Pro</h3><span class="uses-tag">Daily driver</span></div>
+          <p>Main machine for writing, development, and editing. 36GB RAM keeps it comfortable running a browser, editor, and audio tools at once.</p>
+          <div class="why">Battery life survives a full day of travel between talks.</div>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>27″ 4K monitor</h3><span class="uses-tag">Desk</span></div>
+          <p>External display for the home setup, docked next to the laptop for a two-screen writing and coding layout.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Keychron mechanical keyboard</h3><span class="uses-tag">Input</span></div>
+          <p>Low-profile mechanical board, brown switches. Swapped in after one too many long writing sessions on a laptop keyboard.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Logitech MX Master</h3><span class="uses-tag">Input</span></div>
+          <p>Ergonomic mouse that also drives the second machine over Bluetooth when switching between desk and stage setups.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>iPhone + tripod rig</h3><span class="uses-tag">Mobile</span></div>
+          <p>Used for quick voice memos, on-stage backup recordings, and behind-the-scenes clips for the blog.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="uses-section" id="editor">
+      <div class="uses-section-head">
+        <span class="path">~/dev</span>
+        <h2>Editor &amp; terminal</h2>
+      </div>
+      <div class="uses-grid">
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>VS Code</h3><span class="uses-tag">Editor</span></div>
+          <p>Primary editor, kept lean — a handful of extensions, a synced settings file, and a theme that matches this site's dark palette.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Warp</h3><span class="uses-tag">Terminal</span></div>
+          <p>Terminal emulator with command blocks and AI-assisted lookups for the commands I always forget the flags to.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>zsh + oh-my-zsh</h3><span class="uses-tag">Shell</span></div>
+          <p>Shell of choice, with a minimal prompt theme showing just the path and git branch — no clutter.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>tmux</h3><span class="uses-tag">Multiplexer</span></div>
+          <p>Keeps long-running sessions alive over SSH for anything running on a remote box or a Raspberry Pi.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>GitHub + GitHub CLI</h3><span class="uses-tag">Version control</span></div>
+          <p>All projects live here; the CLI handles PRs and issues without leaving the terminal.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="uses-section" id="browser">
+      <div class="uses-section-head">
+        <span class="path">~/browser</span>
+        <h2>Browser</h2>
+      </div>
+      <div class="uses-grid">
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Arc</h3><span class="uses-tag">Daily</span></div>
+          <p>Spaces keep work, writing research, and personal tabs cleanly separated without twelve windows open at once.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>1Password</h3><span class="uses-tag">Extension</span></div>
+          <p>Password manager and the thing that makes two-factor logins on stage demos actually bearable.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>uBlock Origin</h3><span class="uses-tag">Extension</span></div>
+          <p>Non-negotiable. Faster pages, fewer trackers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="uses-section" id="writing">
+      <div class="uses-section-head">
+        <span class="path">~/writing</span>
+        <h2>Writing &amp; design</h2>
+      </div>
+      <div class="uses-grid">
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>iA Writer</h3><span class="uses-tag">Drafting</span></div>
+          <p>Where blog posts and notes start life — plain markdown, no formatting distractions until the piece is ready.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Figma</h3><span class="uses-tag">Design</span></div>
+          <p>Slide decks for talks and quick mockups for this site's layout before they become actual HTML and CSS.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Grammarly</h3><span class="uses-tag">Editing</span></div>
+          <p>A second pass on longer posts, mostly for catching the typos a tired brain skips over.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="uses-section" id="recording">
+      <div class="uses-section-head">
+        <span class="path">~/podcast</span>
+        <h2>Podcast &amp; recording</h2>
+      </div>
+      <div class="uses-grid">
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Shure SM7B</h3><span class="uses-tag">Microphone</span></div>
+          <p>Broadcast-standard dynamic mic for the podcast and any recorded talks — flat, warm, forgiving of a noisy room.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Focusrite Scarlett 2i2</h3><span class="uses-tag">Interface</span></div>
+          <p>Clean preamp and the bridge between the mic and the laptop for every episode.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Riverside.fm</h3><span class="uses-tag">Recording</span></div>
+          <p>Records local high-quality tracks for remote guest interviews, so a shaky connection never ruins the audio.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Descript</h3><span class="uses-tag">Editing</span></div>
+          <p>Edits episodes by editing the transcript — cuts filler words and dead air in a fraction of the usual time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="uses-section" id="productivity">
+      <div class="uses-section-head">
+        <span class="path">~/workflow</span>
+        <h2>Productivity</h2>
+      </div>
+      <div class="uses-grid">
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Notion</h3><span class="uses-tag">Notes</span></div>
+          <p>Talk outlines, blog drafts, and a running backlog of ideas that may or may not ever become posts.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Linear</h3><span class="uses-tag">Tasks</span></div>
+          <p>Tracks anything with more than one step — site changes, talk prep, podcast production.</p>
+        </div>
+        <div class="uses-card">
+          <div class="uses-card-top"><h3>Raycast</h3><span class="uses-tag">Launcher</span></div>
+          <p>Replaces Spotlight for app switching, clipboard history, and a handful of small custom scripts.</p>
+        </div>
+      </div>
+      <p class="uses-note">This list changes more often than it should — check back for updates, or ask on the contact page if something here has been swapped out.</p>
+    </div>
+
   </div>
 </section>
 
@@ -46,8 +394,6 @@
     <div class="foot-meta">© 2026 MAYIBONGWINKOSI JORDAN NDLOVU — BUILT FOR UPTIME</div>
   </div>
 </footer>
-
 <script src="theme.js"></script>
-
 </body>
 </html>
