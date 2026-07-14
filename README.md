@@ -1,266 +1,103 @@
-# Jordan Ndlovu Tech Corner
+# Jordan Ndlovu — Tech Corner
 
-A modern personal portfolio and technical knowledge hub showcasing my journey as an AWS Infrastructure Engineer. This project serves as both a professional portfolio and a living knowledge base where I document cloud engineering concepts, AWS best practices, infrastructure notes, and technical content.
+A personal portfolio and technical knowledge hub built to showcase my journey as an AWS Infrastructure Engineer — part résumé, part living notebook of cloud engineering practices, infrastructure notes, and lessons learned in production.
 
-🌐 **Live Website:** https://jordan-ndlovu.github.io/jordan-ndlovu-tech-corner/
-
----
-
-## 📖 About
-
-Jordan Ndlovu Tech Corner was built to go beyond a traditional résumé.
-
-As an AWS Infrastructure Engineer, much of my work happens behind the scenes—designing cloud infrastructure, supporting production environments, troubleshooting issues, and implementing secure solutions. This website provides a central place where recruiters, employers, and fellow engineers can explore my professional experience, technical skills, certifications, projects, and ongoing learning journey.
-
-The project also demonstrates my ability to design, develop, deploy, and maintain a production-ready website using modern web technologies and GitHub Pages.
+🌐 **Live site:** [jordan-ndlovu.github.io/jordan-ndlovu-tech-corner](https://jordan-ndlovu.github.io/jordan-ndlovu-tech-corner/)
 
 ---
 
-## ✨ Features
+## About
 
-- Responsive modern portfolio
-- Dark and Light theme support
-- Persistent theme selection using Local Storage
-- Technical blog section
-- AWS and Infrastructure notes
-- Resume download
-- Professional certifications
-- Public speaking section
-- Podcast section
-- Mobile responsive navigation
-- Smooth scroll animations
-- Clean and minimal UI
+Most of my day-to-day work as an AWS Infrastructure Engineer happens behind the scenes — designing cloud infrastructure, supporting production environments, troubleshooting issues, and implementing secure solutions. This site gives recruiters, employers, and fellow engineers a single place to explore my experience, certifications, projects, and ongoing learning.
+
+It's also a demonstration in its own right: the site itself is designed, built, and deployed using modern front-end tooling and GitHub Pages, showing the same care for craft that I bring to infrastructure work.
 
 ---
 
-## 📂 Website Sections
+## Features
 
-### 🏠 Home
-
-The landing page introduces my professional profile, highlighting:
-
-- AWS Certifications
-- Cloud Engineering experience
-- Technical skills
-- Career timeline
-- Professional metrics
-- Downloadable résumé
+- Responsive, modern layout with light/dark theme support (persisted via Local Storage)
+- Technical blog covering AWS, cloud architecture, DevOps, and networking
+- Cloud engineering notes drawn from real production work
+- Downloadable résumé and certifications overview
+- Public speaking and podcast sections
+- Mobile-friendly navigation with smooth scroll animations
 
 ---
 
-### 👤 About
+## Site Sections
 
-A detailed overview of my professional journey, experience, certifications, and career aspirations within Cloud Engineering.
-
----
-
-### ✍️ Blog
-
-A collection of technical articles covering topics including:
-
-- AWS
-- Cloud Architecture
-- Infrastructure
-- DevOps
-- Automation
-- Networking
-- Security
+| Section | Description |
+|---|---|
+| **Home** | Profile overview — certifications, experience, skills, career timeline, and résumé download |
+| **About** | Detailed background, experience, and career goals in cloud engineering |
+| **Blog** | Articles on AWS, cloud architecture, infrastructure, DevOps, automation, networking, and security |
+| **Notes** | A personal knowledge base: IAM, EC2, S3, CloudWatch, AWS Transfer Family, Git/GitHub, DNS, authentication, and operational troubleshooting |
+| **Podcast** | Planned conversations on cloud computing, AWS, infrastructure, and career growth |
+| **Public Speaking** | Conference talks, presentations, meetups, and workshops |
+| **Resume** | Downloadable, up-to-date résumé |
+| **Uses** | Tools and technologies I use day to day |
 
 ---
 
-### 📝 Notes
+## Tech Stack
 
-My personal cloud engineering knowledge base.
+**Front end:** HTML5, CSS3, Vanilla JavaScript
+**Design:** Flexbox, CSS Grid, CSS Variables, Google Fonts
+**Deployment:** Git, GitHub, GitHub Pages
 
-Topics include:
+### Notable JavaScript features
 
-- AWS IAM
-- EC2
-- S3
-- CloudWatch
-- AWS Transfer Family
-- Git
-- GitHub
-- Infrastructure troubleshooting
-- DNS
-- Authentication
-- Operational support
-
-These are practical notes collected from real-world engineering work.
+- **Theme toggle** — dark/light mode with the preference saved to Local Storage
+- **Mobile navigation** — responsive hamburger menu for small screens
+- **Scroll animations** — powered by the Intersection Observer API for better performance than traditional scroll listeners
 
 ---
 
-### 🎙 Podcast
+## Why I Built This
 
-A future platform for conversations around:
-
-- Cloud Computing
-- AWS
-- Infrastructure
-- Career Growth
-- Technology
+I wanted something beyond a static CV — a project that demonstrates front-end development skill, cloud engineering knowledge, technical writing, and a Git-based workflow, while giving me an ongoing platform to publish and grow.
 
 ---
 
-### 🎤 Public Speaking
+## Roadmap
 
-This page will document:
-
-- Conference talks
-- Technical presentations
-- Community events
-- Meetups
-- Workshops
-
----
-
-### 📄 Resume
-
-Allows visitors to download my latest professional résumé.
+- [ ] Migrate hosting to Amazon S3 + CloudFront + Route 53 (custom domain)
+- [ ] Add a serverless backend (Lambda, API Gateway, DynamoDB)
+- [ ] Add authentication via Amazon Cognito
+- [ ] Set up CI/CD with GitHub Actions
+- [ ] Add CloudWatch monitoring
+- [ ] Manage infrastructure as code (Terraform or AWS CloudFormation)
+- [ ] Add search functionality to the notes section
+- [ ] Move the blog to a Markdown-powered engine
 
 ---
 
-### ⚙ Uses
-
-A list of the tools and technologies I use daily as an AWS Infrastructure Engineer.
-
----
-
-## 🛠 Technologies
-
-### Frontend
-
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-
-### Design
-
-- Flexbox
-- CSS Grid
-- CSS Variables
-- Google Fonts
-
-### Deployment
-
-- Git
-- GitHub
-- GitHub Pages
-
----
-
-## 💡 JavaScript Features
-
-The website includes several interactive features:
-
-### Theme Toggle
-
-- Dark/Light mode
-- Preference saved using Local Storage
-
-### Mobile Navigation
-
-- Responsive hamburger menu
-- Optimized for smaller screens
-
-### Scroll Animations
-
-Uses the Intersection Observer API to reveal content as users scroll, improving performance compared to traditional scroll event listeners.
-
----
-
-## 🎯 Why I Built This Project
-
-I wanted more than a CV.
-
-This project demonstrates:
-
-- Front-end development skills
-- Cloud engineering knowledge
-- Technical documentation
-- Git workflow
-- Continuous learning
-- Professional branding
-
-It also serves as a platform where I can continually publish technical content and showcase my growth as a Cloud Engineer.
-
----
-
-## 🚀 Future Enhancements
-
-Planned improvements include:
-
-- Hosting on Amazon S3
-- CloudFront CDN
-- Route 53 custom domain
-- AWS Lambda backend
-- API Gateway
-- Amazon DynamoDB
-- Amazon Cognito authentication
-- GitHub Actions CI/CD
-- CloudWatch monitoring
-- Infrastructure as Code using Terraform or AWS CloudFormation
-- Search functionality for technical notes
-- Markdown-powered blog engine
-
----
-
-## 📸 Screenshots
-
-> Screenshots will be added as the project evolves.
-
----
-
-## 📜 Certifications
+## Certifications
 
 - AWS Certified Cloud Practitioner
 - AWS Certified Developer – Associate
-- Claude 101
-- Claude Code 101
 
 ---
 
-## 👨‍💻 About Me
+## About Me
 
-I'm an AWS Infrastructure Engineer with over four years of IT experience and more than three years specializing in cloud infrastructure.
+I'm an AWS Infrastructure Engineer with 4+ years of IT experience, including 3+ years specializing in cloud infrastructure. I enjoy designing secure, scalable cloud environments, automating infrastructure, troubleshooting production systems, and continuously learning new technologies.
 
-I enjoy designing secure, scalable cloud environments, automating infrastructure, troubleshooting production systems, and continuously learning new technologies.
-
-My primary areas of interest include:
-
-- AWS Cloud
-- Infrastructure Engineering
-- DevOps
-- Automation
-- Cloud Security
-- Networking
-- Linux
-- Site Reliability Engineering
+**Areas of interest:** AWS Cloud, Infrastructure Engineering, DevOps, Automation, Cloud Security, Networking, Linux, Site Reliability Engineering
 
 ---
 
-## 🤝 Connect With Me
+## Connect
 
-**LinkedIn**
-
-https://www.linkedin.com/in/jordan-ndlovu-1a3506a5/
-
-**GitHub**
-
-https://github.com/jordan-ndlovu
-
-**Email**
-
-jordanndlovu100@gmail.com
+- **LinkedIn:** [linkedin.com/in/mayibongwinkosi-jordan-ndlovu](https://www.linkedin.com/in/mayibongwinkosi-jordan-ndlovu)
+- **GitHub:** [github.com/jordan-ndlovu](https://github.com/jordan-ndlovu)
+- **Email:** jordanndlovu100@gmail.com
 
 ---
 
-## 📄 License
+## License
 
-This project is intended as a personal portfolio and learning platform.
+This project is a personal portfolio and learning platform. Feel free to explore the repo, open an issue, or reach out to connect on cloud technologies and engineering.
 
-Feel free to explore the repository, provide feedback, or connect with me to discuss cloud technologies and software engineering.
-
----
-
-⭐ If you found this project interesting, feel free to star the repository.
+⭐ If you found this useful, consider starring the repository.
