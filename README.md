@@ -12,6 +12,8 @@ Most of my day-to-day work as an AWS Infrastructure Engineer happens behind the 
 
 It's also a demonstration in its own right: the site itself is designed, built, and deployed using modern front-end tooling and GitHub Pages, showing the same care for craft that I bring to infrastructure work.
 
+This is a zero-budget project — everything is hosted entirely free on GitHub Pages, with no paid infrastructure involved.
+
 ---
 
 ## Features
@@ -77,6 +79,8 @@ I wanted something beyond a static CV — a project that demonstrates front-end 
 
 - AWS Certified Cloud Practitioner
 - AWS Certified Developer – Associate
+- Claude 101
+- Claude Code 101
 
 ---
 
@@ -92,7 +96,7 @@ I'm an AWS Infrastructure Engineer with 4+ years of IT experience, including 3+ 
 
 - **LinkedIn:** [linkedin.com/in/mayibongwinkosi-jordan-ndlovu](https://www.linkedin.com/in/mayibongwinkosi-jordan-ndlovu)
 - **GitHub:** [github.com/jordan-ndlovu](https://github.com/jordan-ndlovu)
-- **Email:** jordanndlovu96@gmail.com
+- **Email:** jordanndlovu100@gmail.com
 
 ---
 
