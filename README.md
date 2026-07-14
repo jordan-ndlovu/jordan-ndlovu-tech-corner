@@ -92,7 +92,7 @@ I'm an AWS Infrastructure Engineer with 4+ years of IT experience, including 3+ 
 
 - **LinkedIn:** [linkedin.com/in/mayibongwinkosi-jordan-ndlovu](https://www.linkedin.com/in/mayibongwinkosi-jordan-ndlovu)
 - **GitHub:** [github.com/jordan-ndlovu](https://github.com/jordan-ndlovu)
-- **Email:** jordanndlovu100@gmail.com
+- **Email:** jordanndlovu96@gmail.com
 
 ---
 
