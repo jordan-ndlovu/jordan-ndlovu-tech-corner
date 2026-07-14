@@ -1,6 +1,6 @@
-# Jordan Ndlovu — Tech Corner
+# Jordan Ndlovu Tech Corner
 
-A personal portfolio and technical knowledge hub built to showcase my journey as an AWS Infrastructure Engineer — part résumé, part living notebook of cloud engineering practices, infrastructure notes, and lessons learned in production.
+A personal portfolio and technical knowledge hub built to showcase my journey as an AWS Infrastructure Engineer part résumé, part living notebook of cloud engineering practices, infrastructure notes, and lessons learned in production.
 
 🌐 **Live site:** [jordan-ndlovu.github.io/jordan-ndlovu-tech-corner](https://jordan-ndlovu.github.io/jordan-ndlovu-tech-corner/)
 
@@ -8,11 +8,11 @@ A personal portfolio and technical knowledge hub built to showcase my journey as
 
 ## About
 
-Most of my day-to-day work as an AWS Infrastructure Engineer happens behind the scenes — designing cloud infrastructure, supporting production environments, troubleshooting issues, and implementing secure solutions. This site gives recruiters, employers, and fellow engineers a single place to explore my experience, certifications, projects, and ongoing learning.
+Most of my day-to-day work as an AWS Infrastructure Engineer happens behind the scenes designing cloud infrastructure, supporting production environments, troubleshooting issues, and implementing secure solutions. This site gives recruiters, employers, and fellow engineers a single place to explore my experience, certifications, projects, and ongoing learning.
 
 It's also a demonstration in its own right: the site itself is designed, built, and deployed using modern front-end tooling and GitHub Pages, showing the same care for craft that I bring to infrastructure work.
 
-This is a zero-budget project — everything is hosted entirely free on GitHub Pages, with no paid infrastructure involved.
+This is a zero-budget project everything is hosted entirely free on GitHub Pages, with no paid infrastructure involved.
 
 ---
 
@@ -31,7 +31,7 @@ This is a zero-budget project — everything is hosted entirely free on GitHub P
 
 | Section | Description |
 |---|---|
-| **Home** | Profile overview — certifications, experience, skills, career timeline, and résumé download |
+| **Home** | Profile overview certifications, experience, skills, career timeline, and résumé download |
 | **About** | Detailed background, experience, and career goals in cloud engineering |
 | **Blog** | Articles on AWS, cloud architecture, infrastructure, DevOps, automation, networking, and security |
 | **Notes** | A personal knowledge base: IAM, EC2, S3, CloudWatch, AWS Transfer Family, Git/GitHub, DNS, authentication, and operational troubleshooting |
