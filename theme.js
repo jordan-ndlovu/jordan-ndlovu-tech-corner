@@ -3,6 +3,7 @@
   const root = document.documentElement;
   const saved = localStorage.getItem('jn-theme');
   if (saved) root.setAttribute('data-theme', saved);
+
   window.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.theme-toggle');
     if (toggle) {
@@ -13,26 +14,16 @@
         localStorage.setItem('jn-theme', next);
       });
     }
+
     const burger = document.querySelector('.nav-burger');
     const navlinks = document.querySelector('.navlinks');
     if (burger && navlinks) {
       burger.addEventListener('click', () => navlinks.classList.toggle('mobile-open'));
     }
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    /* ================================
-       Scroll Progress Bar
-    ================================ */
-    const progress = document.querySelector(".scroll-progress");
-    if (progress) {
-      window.addEventListener("scroll", () => {
-        const h = document.documentElement;
-        const scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight);
-        progress.style.width = (scrolled * 100) + "%";
-      });
-    }
   });
 })();
