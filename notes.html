@@ -7,100 +7,47 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<style>
-  .notes-wrap{ max-width:820px; margin:0 auto; padding:0 24px 96px; }
-  .notes-group{ margin-bottom:56px; }
-  .notes-group-head{
-    display:flex; align-items:baseline; gap:12px; margin-bottom:4px;
-    font-family:'Space Grotesk', sans-serif; font-weight:600; font-size:1.2rem;
-  }
-  .notes-group-count{
-    font-family:'IBM Plex Mono', monospace; font-size:.75rem; opacity:.5;
-  }
-  .notes-list{ display:flex; flex-direction:column; }
-  .note-row{
-    display:flex; justify-content:space-between; align-items:center; gap:16px;
-    padding:16px 4px; border-bottom:1px solid var(--border, rgba(255,255,255,0.1));
-    text-decoration:none; color:inherit; transition:opacity .15s ease;
-  }
-  .note-row:hover{ opacity:.7; }
-  .notes-list .note-row:first-child{ border-top:1px solid var(--border, rgba(255,255,255,0.1)); }
-  .note-title{ font-family:'IBM Plex Sans', sans-serif; font-size:.95rem; }
-  .note-status{
-    font-family:'IBM Plex Mono', monospace; font-size:.7rem; letter-spacing:.02em;
-    opacity:.55; white-space:nowrap;
-  }
-</style>
 </head>
 <body>
+
 <header>
-<nav>
-<div class="logo"><span class="dot"></span> JORDAN.NDLOVU</div>
-<div class="navlinks">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="blog.html">Blog</a>
-<a href="notes.html" class="active">Notes</a>
-<a href="podcast.html">Podcast</a>
-<a href="publicspeaking.html">Public Speaking</a>
-<a href="Jordan_Ndlovu_CV.pdf">Resume</a>
-<a href="uses.html">Uses</a>
-</div>
-<div style="display:flex; align-items:center; gap:14px;">
-<button class="theme-toggle" aria-label="Toggle light/dark theme"><span class="knob"></span></button>
-<button class="nav-burger" aria-label="Open menu">☰</button>
-</div>
-</nav>
+  <nav>
+    <div class="logo"><span class="dot"></span> JORDAN.NDLOVU</div>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="notes.html" class="active">Notes</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="publicspeaking.html">Public Speaking</a>
+      <a href="Jordan_Ndlovu_CV.pdf">Resume</a>
+      <a href="uses.html">Uses</a>
+    </div>
+    <div style="display:flex; align-items:center; gap:14px;">
+      <button class="theme-toggle" aria-label="Toggle light/dark theme"><span class="knob"></span></button>
+      <button class="nav-burger" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
 </header>
 
 <section class="simple-hero">
-<div class="wrap">
-<div class="coming-soon-badge"><span class="dot"></span> WORK LOG</div>
-<h1>Notes</h1>
-<p>Smaller technical notes — the kind of thing I'd otherwise lose in a terminal history. AWS commands, Git workflow, and lessons from support work, kept short and searchable.</p>
-</div>
+  <div class="wrap">
+    <div class="coming-soon-badge"><span class="dot"></span> UNDER CONSTRUCTION</div>
+    <h1>Notes</h1>
+    <p>Quick-reference notes on AWS services, networking, and sysadmin commands. Coming soon.</p>
+    <div class="cta-row" style="justify-content:center; margin-top:28px;">
+      <a class="btn btn-primary" href="index.html">← Back to home</a>
+    </div>
+  </div>
 </section>
 
-<div class="notes-wrap">
-
-<div class="notes-group">
-  <div class="notes-group-head">AWS <span class="notes-group-count">05</span></div>
-  <div class="notes-list">
-    <a class="note-row" href="#"><span class="note-title">IAM role troubleshooting notes</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">AWS Transfer Family SFTP setup notes</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">S3 access troubleshooting</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">EC2 access / SSH reminders</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">CloudWatch logging quick notes</span><span class="note-status">Coming soon</span></a>
-  </div>
-</div>
-
-<div class="notes-group">
-  <div class="notes-group-head">Git / GitHub <span class="notes-group-count">04</span></div>
-  <div class="notes-list">
-    <a class="note-row" href="#"><span class="note-title">How to create a dev branch</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">Common Git commands I use</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">GitHub Pages deployment notes</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">Merge flow for dev → main</span><span class="note-status">Coming soon</span></a>
-  </div>
-</div>
-
-<div class="notes-group">
-  <div class="notes-group-head">Infrastructure / Support <span class="notes-group-count">04</span></div>
-  <div class="notes-list">
-    <a class="note-row" href="#"><span class="note-title">Troubleshooting checklist for access issues</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">DNS / networking notes</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">MFA / Duo / authentication notes</span><span class="note-status">Coming soon</span></a>
-    <a class="note-row" href="#"><span class="note-title">Operational lessons from support work</span><span class="note-status">Coming soon</span></a>
-  </div>
-</div>
-
-</div>
-
 <footer id="contact" style="padding-top:0;">
-<div class="wrap">
-<div class="foot-meta">© 2026 MAYIBONGWINKOSI JORDAN NDLOVU — BUILT FOR UPTIME</div>
-</div>
+  <div class="wrap">
+    <div class="foot-meta">© 2026 MAYIBONGWINKOSI JORDAN NDLOVU — BUILT FOR UPTIME</div>
+  </div>
 </footer>
+
 <script src="theme.js"></script>
+
 </body>
 </html>
