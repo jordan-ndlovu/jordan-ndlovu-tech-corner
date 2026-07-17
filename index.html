@@ -10,9 +10,24 @@
 </head>
 <body>
 
+<div class="boot-overlay" id="bootOverlay" aria-hidden="true">
+  <div class="boot-lines" id="bootLines">
+    <div class="boot-line">[<span class="ok">&nbsp;OK&nbsp;</span>] Initializing JordanOS kernel…</div>
+    <div class="boot-line">[<span class="ok">&nbsp;OK&nbsp;</span>] Mounting cloud modules (EC2, S3, IAM, Lambda)…</div>
+    <div class="boot-line">[<span class="ok">&nbsp;OK&nbsp;</span>] Establishing secure session…</div>
+    <div class="boot-line">[<span class="ok">&nbsp;OK&nbsp;</span>] Cloud Operations Console ready.</div>
+  </div>
+</div>
+
 <header>
   <nav>
-    <div class="logo"><span class="dot"></span> JORDAN.NDLOVU</div>
+    <div class="logo">
+      <span class="dot"></span>
+      <span class="logo-text">
+        <span class="logo-name">JORDANOS</span>
+        <span class="logo-tag">Cloud Operations Console</span>
+      </span>
+    </div>
     <div class="navlinks">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
@@ -24,7 +39,13 @@
       <a href="uses.html">Uses</a>
     </div>
     <div style="display:flex; align-items:center; gap:14px;">
-      <button class="theme-toggle" aria-label="Toggle light/dark theme"><span class="knob"></span></button>
+      <button class="theme-toggle" aria-label="Toggle light/dark theme">
+        <span class="toggle-track">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="12" y1="1.5" x2="12" y2="4.2"/><line x1="12" y1="19.8" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="4.2" y2="12"/><line x1="19.8" y1="12" x2="22.5" y2="12"/><line x1="4.4" y1="4.4" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.6" y2="19.6"/><line x1="4.4" y1="19.6" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.6" y2="4.4"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.7A8.5 8.5 0 1 1 9.3 3.5a7 7 0 0 0 11.2 11.2z"/></svg>
+          <span class="knob"></span>
+        </span>
+      </button>
       <button class="nav-burger" aria-label="Open menu">☰</button>
     </div>
   </nav>
@@ -34,51 +55,101 @@
   <div class="wrap">
     <div class="panel">
       <div class="panel-bar">
-        <span>SYSTEM://jordan-ndlovu/profile</span>
+        <span>SYSTEM://jordanos/profile</span>
         <span style="display:flex; align-items:center; gap:18px;">
           <img src="https://visitor-badge.laobi.icu/badge?page_id=jordan-ndlovu.github.io&left_color=%2316262a&right_color=%23e8a33d&left_text=visitors" alt="Visitor count" style="height:20px; border-radius:4px; vertical-align:middle;">
           <span class="status-live"><span class="dot"></span> OPERATIONAL</span>
         </span>
       </div>
       <div class="panel-body">
-        <div class="avatar-row">
-          <div class="avatar-wrap">
-            <!-- Replace this placeholder with: <img src="photo.jpg" alt="Jordan Ndlovu"> -->
-            <span class="initials">JN</span>
-          </div>
-          <div class="name-block">
-            <div class="name-big">MAYIBONGWINKOSI JORDAN NDLOVU</div>
-            <div class="name-sub">AWS Engineer @ Marquis Finance · Johannesburg, South Africa</div>
-            <div class="social-row">
-              <a class="social-icon" href="https://github.com/jordan-ndlovu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">GH</a>
-              <a class="social-icon" href="https://linkedin.com/in/-jordan-ndlovu" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">IN</a>
-              <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">YT</a>
-              <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="X" title="X">X</a>
+        <div class="hero-grid">
+          <div class="hero-left">
+            <div class="avatar-row">
+              <div class="avatar-wrap">
+                <!-- Replace this placeholder with: <img src="photo.jpg" alt="Jordan Ndlovu"> -->
+                <span class="initials">JN</span>
+              </div>
+              <div class="name-block">
+                <div class="name-big">MAYIBONGWINKOSI JORDAN NDLOVU</div>
+                <div class="name-sub">AWS Engineer @ Marquis Finance · Johannesburg, South Africa</div>
+                <div class="social-row">
+                  <a class="social-icon" href="https://github.com/jordan-ndlovu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  </a>
+                  <a class="social-icon" href="https://www.linkedin.com/in/mayibongwinkosi-jordan-ndlovu" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                  </a>
+                  <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.12C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.391.521a2.994 2.994 0 0 0-2.107 2.12A31.06 31.06 0 0 0 0 12a31.06 31.06 0 0 0 .502 5.814 2.994 2.994 0 0 0 2.107 2.12c1.886.521 9.391.521 9.391.521s7.505 0 9.391-.521a2.994 2.994 0 0 0 2.107-2.12A31.06 31.06 0 0 0 24 12a31.06 31.06 0 0 0-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg>
+                  </a>
+                  <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="X" title="X">
+                    <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                  </a>
+                  <a class="social-icon" href="https://www.credly.com/users/mayibongwinkosi-jordan-ndlovu/badges/credly" target="_blank" rel="noopener" aria-label="Credly badges" title="Credly">
+                    <svg viewBox="0 0 24 24"><path d="M12 1.5 3 5.75v6.5c0 5.75 3.9 9.94 9 10.75 5.1-.81 9-5 9-10.75v-6.5L12 1.5zm0 2.24 7.5 3.55v5.46c0 4.63-3.02 7.87-7.5 8.73-4.48-.86-7.5-4.1-7.5-8.73V7.29L12 3.74zM12 6l-4.5 2.1v3.4c0 2.9 1.9 4.98 4.5 5.5 2.6-.52 4.5-2.6 4.5-5.5V8.1L12 6zm-1.1 7.2L8.6 10.9l1.06-1.06 1.24 1.24 3.44-3.44 1.06 1.06-4.5 4.5z"/></svg>
+                  </a>
+                  <a class="social-icon" href="https://medium.com/@jordanndlovu96" target="_blank" rel="noopener" aria-label="Medium blog" title="Medium">
+                    <svg viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42c1.87 0 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="eyebrow">Infrastructure Engineer</div>
+            <h1>I keep cloud systems running&nbsp;— <br>and I like it when nobody notices.</h1>
+            <p class="lead">4+ years across AWS infrastructure, systems administration and production support — turning incidents into non-events and access requests into five-minute tasks.</p>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#contact">Get in touch →</a>
+              <a class="btn btn-ghost" href="#experience">View experience log</a>
+              <a class="btn btn-ghost" href="Jordan_Ndlovu_CV.pdf" download>⬇ Download CV</a>
+            </div>
+
+            <div class="metrics">
+              <div class="metric"><div class="val"><span>4</span>+</div><div class="label">Years experience</div></div>
+              <div class="metric"><div class="val">4</div><div class="label">Certifications</div></div>
+              <div class="metric"><div class="val">15</div><div class="label">AWS services in daily use</div></div>
+              <div class="metric"><div class="val">24/7</div><div class="label">Monitoring mindset</div></div>
             </div>
           </div>
-        </div>
 
-        <div class="eyebrow">Infrastructure Engineer</div>
-        <h1>I keep cloud systems running&nbsp;— <br>and I like it when nobody notices.</h1>
-        <p class="lead">4+ years across AWS infrastructure, systems administration and production support — turning incidents into non-events and access requests into five-minute tasks.</p>
-
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Get in touch →</a>
-          <a class="btn btn-ghost" href="#experience">View experience log</a>
-          <a class="btn btn-ghost" href="Jordan_Ndlovu_CV.pdf" download>⬇ Download CV</a>
-        </div>
-
-        <div class="metrics">
-          <div class="metric"><div class="val"><span>4</span>+</div><div class="label">Years experience</div></div>
-          <div class="metric"><div class="val">2</div><div class="label">AWS certifications</div></div>
-          <div class="metric"><div class="val">15</div><div class="label">AWS services in daily use</div></div>
-          <div class="metric"><div class="val">24/7</div><div class="label">Monitoring mindset</div></div>
+          <div class="hero-right">
+            <div class="operations-console reveal">
+              <div class="console-header">
+                <span>OPERATIONS CONSOLE</span>
+                <span class="console-live">● LIVE</span>
+              </div>
+              <div class="console-body">
+                <div class="console-row">
+                  <span>Status</span>
+                  <strong class="healthy">Operational</strong>
+                </div>
+                <div class="console-row">
+                  <span>Response time</span>
+                  <strong>&lt; 15 min</strong>
+                </div>
+                <div class="console-row">
+                  <span>Region</span>
+                  <strong>af-south-1 · Johannesburg</strong>
+                </div>
+                <div class="console-row">
+                  <span>Uptime (career)</span>
+                  <strong>4+ yrs</strong>
+                </div>
+                <div class="console-status">
+                  <div class="available">OPEN TO NEW OPPORTUNITIES</div>
+                </div>
+              </div>
+              <div class="console-footer">Last deployed: this week</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section id="skills">
+
+<section>
   <div class="wrap">
     <div class="eyebrow reveal">Service health</div>
     <h2 class="reveal">Skills, by subsystem</h2>
@@ -136,6 +207,17 @@
         <div class="name">AWS Certified Cloud Practitioner</div>
         <div class="meta">Valid through Nov 2026</div>
       </div>
+      <div class="cert reveal">
+        <div class="name">Claude 101</div>
+        <div class="meta">Completed Jul 2026</div>
+      </div>
+      <div class="cert reveal">
+        <div class="name">Claude Code 101</div>
+        <div class="meta">Completed Jul 2026</div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:20px;">
+      <a class="btn btn-ghost" href="https://www.credly.com/users/mayibongwinkosi-jordan-ndlovu/badges/credly" target="_blank" rel="noopener">View verified badges on Credly ↗</a>
     </div>
   </div>
 </section>
@@ -279,10 +361,24 @@
         <a class="btn btn-ghost" href="Jordan_Ndlovu_CV.pdf" download>⬇ Download CV</a>
       </div>
       <div class="social-row" style="justify-content:center; margin-top:24px;">
-        <a class="social-icon" href="https://github.com/jordan-ndlovu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">GH</a>
-        <a class="social-icon" href="https://linkedin.com/in/-jordan-ndlovu" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">IN</a>
-        <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">YT</a>
-        <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="X" title="X">X</a>
+        <a class="social-icon" href="https://github.com/jordan-ndlovu" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.linkedin.com/in/mayibongwinkosi-jordan-ndlovu" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a2.994 2.994 0 0 0-2.107-2.12C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.391.521a2.994 2.994 0 0 0-2.107 2.12A31.06 31.06 0 0 0 0 12a31.06 31.06 0 0 0 .502 5.814 2.994 2.994 0 0 0 2.107 2.12c1.886.521 9.391.521 9.391.521s7.505 0 9.391-.521a2.994 2.994 0 0 0 2.107-2.12A31.06 31.06 0 0 0 24 12a31.06 31.06 0 0 0-.502-5.814zM9.545 15.568V8.432L15.818 12z"/></svg>
+        </a>
+        <a class="social-icon" href="#" target="_blank" rel="noopener" aria-label="X" title="X">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a class="social-icon" href="https://www.credly.com/users/mayibongwinkosi-jordan-ndlovu/badges/credly" target="_blank" rel="noopener" aria-label="Credly badges" title="Credly">
+          <svg viewBox="0 0 24 24"><path d="M12 1.5 3 5.75v6.5c0 5.75 3.9 9.94 9 10.75 5.1-.81 9-5 9-10.75v-6.5L12 1.5zm0 2.24 7.5 3.55v5.46c0 4.63-3.02 7.87-7.5 8.73-4.48-.86-7.5-4.1-7.5-8.73V7.29L12 3.74zM12 6l-4.5 2.1v3.4c0 2.9 1.9 4.98 4.5 5.5 2.6-.52 4.5-2.6 4.5-5.5V8.1L12 6zm-1.1 7.2L8.6 10.9l1.06-1.06 1.24 1.24 3.44-3.44 1.06 1.06-4.5 4.5z"/></svg>
+        </a>
+        <a class="social-icon" href="https://medium.com/@jordanndlovu96" target="_blank" rel="noopener" aria-label="Medium blog" title="Medium">
+          <svg viewBox="0 0 24 24"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42c1.87 0 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        </a>
       </div>
     </div>
     <div class="foot-meta">© 2026 MAYIBONGWINKOSI JORDAN NDLOVU — BUILT FOR UPTIME</div>
