@@ -337,3 +337,212 @@ html[data-theme="light"] .theme-toggle .knob{ transform: translateX(18px); }
   color: var(--amber); border:1px solid var(--border); padding: 6px 14px; border-radius: 20px; margin-bottom: 24px;
 }
 .coming-soon-badge .dot{ width:7px; height:7px; border-radius:50%; background: var(--amber); }
+/* =======================================================
+   HERO GRID
+======================================================= */
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.3fr 430px;
+    gap:50px;
+    align-items:start;
+}
+
+.hero-left{
+    min-width:0;
+}
+
+.hero-right{
+    position:relative;
+}
+
+/* =======================================================
+   OPERATIONS CONSOLE
+======================================================= */
+
+.operations-console{
+
+    position:sticky;
+
+    top:110px;
+
+    background:linear-gradient(
+        180deg,
+        var(--panel-hi),
+        var(--panel)
+    );
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+}
+
+.console-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 22px;
+
+    border-bottom:1px solid var(--border);
+
+    background:rgba(255,255,255,.02);
+
+    font-family:var(--font-mono);
+
+    font-size:13px;
+}
+
+.console-live{
+
+    color:var(--mint);
+
+    font-weight:600;
+
+    animation:pulse 2s infinite;
+}
+
+.console-body{
+
+    padding:20px;
+}
+
+.console-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    font-family:var(--font-mono);
+
+    font-size:13px;
+}
+
+.console-row:last-child{
+
+    border-bottom:none;
+}
+
+.console-row strong{
+
+    color:var(--text);
+
+    font-weight:600;
+}
+
+.console-row .healthy{
+
+    color:var(--mint);
+}
+
+.console-status{
+
+    margin-top:22px;
+
+    padding:18px;
+
+    border-radius:10px;
+
+    background:rgba(111,207,151,.08);
+
+    border:1px solid rgba(111,207,151,.18);
+}
+
+.available{
+
+    color:var(--mint);
+
+    font-family:var(--font-mono);
+
+    font-size:13px;
+
+    text-align:center;
+
+    font-weight:600;
+}
+
+.console-footer{
+
+    margin-top:22px;
+
+    font-size:12px;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    font-family:var(--font-mono);
+}
+
+/* =======================================================
+   HERO METRICS
+======================================================= */
+
+.metrics{
+
+    margin-top:40px;
+}
+
+.metric{
+
+    transition:.25s;
+}
+
+.metric:hover{
+
+    transform:translateY(-5px);
+
+    background:rgba(232,163,61,.06);
+}
+
+/* =======================================================
+   RESPONSIVE
+======================================================= */
+
+@media(max-width:1000px){
+
+.hero-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-right{
+
+margin-top:40px;
+
+}
+
+.operations-console{
+
+position:relative;
+
+top:auto;
+
+}
+
+}
+
+@media(max-width:640px){
+
+.metrics{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
