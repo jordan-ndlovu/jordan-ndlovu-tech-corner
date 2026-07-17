@@ -422,12 +422,93 @@ html[data-theme="light"] .theme-toggle .knob{
         grid-template-columns:1fr;
     }
 
-    .hero-right{
-        margin-top:35px;
-    }
+    .hero-grid{
+
+    display:grid;
+
+    grid-template-columns: 1.2fr .8fr;
+
+    gap:40px;
+
+    align-items:start;
 
 }
 
+.hero-right{
+
+    position:sticky;
+
+    top:110px;
+
+}
+
+.dashboard-card{
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+}
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 22px;
+
+    background:var(--panel-hi);
+
+    border-bottom:1px solid var(--border);
+
+    font-family:var(--font-mono);
+
+}
+
+.dashboard-body{
+
+    padding:20px;
+
+}
+
+.service-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 0;
+
+    border-bottom:1px dashed var(--border);
+
+    font-family:var(--font-mono);
+
+    font-size:13px;
+
+}
+
+.service-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.healthy{
+
+    color:var(--mint);
+
+    font-weight:600;
+
+}
 /*=========================================================
   OPERATIONS CONSOLE
 =========================================================*/
