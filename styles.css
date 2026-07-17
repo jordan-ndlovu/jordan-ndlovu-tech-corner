@@ -74,20 +74,31 @@
   h2{ font-size: 30px; margin-bottom: 40px; }
   p{ color: var(--muted); max-width: 640px; }
 
-  /* ---------- NAV ---------- */
+  /* ---------- NAV (glass) ---------- */
   header{
     position: sticky; top:0; z-index: 50;
-    background: rgba(15,27,30,0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(22,38,42,0.55);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  }
+  html[data-theme="light"] header{
+    background: rgba(255,255,255,0.6);
   }
   nav{
-    max-width:1040px; margin:0 auto; padding: 18px 24px;
+    max-width:1040px; margin:0 auto; padding: 16px 24px;
     display:flex; align-items:center; justify-content:space-between;
   }
   .logo{
     font-family: var(--font-mono); font-size:14px; font-weight:600;
     display:flex; align-items:center; gap:10px;
+  }
+  .logo-text{ display:flex; flex-direction:column; line-height:1.15; }
+  .logo-name{ letter-spacing: 0.04em; }
+  .logo-tag{
+    font-size: 9.5px; font-weight:400; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--muted);
   }
   .dot{
     width:8px; height:8px; border-radius:50%; background: var(--mint);
@@ -102,6 +113,7 @@
   .navlinks a{ text-decoration:none; transition: color .15s; }
   .navlinks a:hover{ color: var(--amber); }
   @media (max-width: 640px){ .navlinks{ display:none; } }
+  @media (max-width: 480px){ .logo-tag{ display:none; } }
 
   /* ---------- HERO / STATUS PANEL ---------- */
   .hero{ padding-top: 72px; border-bottom: 1px solid var(--border); }
@@ -273,18 +285,59 @@
   ::selection{ background: var(--amber); color: #171008; }
   :focus-visible{ outline: 2px solid var(--amber); outline-offset: 2px; }
 
-/* ---------- THEME TOGGLE ---------- */
+/* ---------- THEME TOGGLE (animated sun/moon) ---------- */
 .theme-toggle{
-  width: 42px; height: 24px; border-radius: 20px;
+  border:none; background:none; padding:0; cursor:pointer; flex-shrink:0;
+}
+.toggle-track{
+  display:block; width: 46px; height: 25px; border-radius: 20px;
   background: var(--panel-hi); border: 1px solid var(--border);
-  position: relative; cursor: pointer; flex-shrink: 0;
-  padding: 0;
+  position: relative;
 }
-.theme-toggle .knob{
-  position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%;
-  background: var(--amber); transition: transform .25s ease;
+.toggle-track .knob{
+  position:absolute; top:2px; left:2px; width:19px; height:19px; border-radius:50%;
+  background: var(--amber); transition: transform .3s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 0 0 4px rgba(232,163,61,0.12);
 }
-html[data-theme="light"] .theme-toggle .knob{ transform: translateX(18px); }
+html[data-theme="light"] .toggle-track .knob{ transform: translateX(21px); }
+
+.toggle-track svg{
+  position:absolute; top:50%; width:13px; height:13px; fill:none;
+  transition: opacity .25s ease, transform .3s ease;
+  pointer-events:none;
+}
+.icon-sun{ left:5px; transform: translateY(-50%) scale(1); opacity:1; fill:#171008; }
+.icon-moon{ right:5px; transform: translateY(-50%) scale(.6); opacity:0; fill: var(--panel-hi); }
+html[data-theme="light"] .icon-sun{ opacity:0; transform: translateY(-50%) scale(.6); }
+html[data-theme="light"] .icon-moon{ opacity:1; transform: translateY(-50%) scale(1); fill:#171008; }
+
+/* ---------- BOOT SEQUENCE ---------- */
+.boot-overlay{
+  position: fixed; inset:0; z-index: 200;
+  background: var(--bg);
+  display:flex; align-items:center; justify-content:center;
+  transition: opacity .5s ease, visibility .5s ease;
+}
+.boot-overlay.hidden{ opacity:0; visibility:hidden; pointer-events:none; }
+.boot-lines{
+  font-family: var(--font-mono); font-size: 13px; color: var(--muted);
+  width: min(90vw, 480px);
+}
+.boot-line{
+  opacity:0; transform: translateY(4px);
+  animation: bootIn .35s ease forwards;
+  margin-bottom: 10px;
+}
+.boot-line:nth-child(1){ animation-delay: .1s; }
+.boot-line:nth-child(2){ animation-delay: .5s; }
+.boot-line:nth-child(3){ animation-delay: .9s; }
+.boot-line:nth-child(4){ animation-delay: 1.3s; color: var(--mint); }
+.boot-line .ok{ color: var(--mint); font-weight:600; }
+@keyframes bootIn{ to{ opacity:1; transform:none; } }
+
+@media (prefers-reduced-motion: reduce){
+  .boot-overlay{ display:none; }
+}
 
 /* ---------- AVATAR ---------- */
 .avatar-wrap{
