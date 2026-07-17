@@ -266,16 +266,75 @@
 
 /* ---------- THEME TOGGLE ---------- */
 .theme-toggle{
-  width: 42px; height: 24px; border-radius: 20px;
-  background: var(--panel-hi); border: 1px solid var(--border);
-  position: relative; cursor: pointer; flex-shrink: 0;
-  padding: 0;
+
+    width:90px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:var(--panel-hi);
+
+    position:relative;
+
+    cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 12px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
 }
+
+.theme-toggle:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.theme-toggle .sun,
+.theme-toggle .moon{
+
+    z-index:2;
+
+    font-size:18px;
+
+}
+
 .theme-toggle .knob{
-  position:absolute; top:2px; left:2px; width:18px; height:18px; border-radius:50%;
-  background: var(--amber); transition: transform .25s ease;
+
+    position:absolute;
+
+    width:34px;
+
+    height:34px;
+
+    border-radius:50%;
+
+    background:#FF9900;
+
+    left:4px;
+
+    transition:.35s;
+
+    box-shadow:0 0 18px rgba(255,153,0,.45);
+
 }
-html[data-theme="light"] .theme-toggle .knob{ transform: translateX(18px); }
+
+html[data-theme="light"] .theme-toggle .knob{
+
+    transform:translateX(48px);
+
+}
 
 /* ---------- AVATAR ---------- */
 .avatar-wrap{
